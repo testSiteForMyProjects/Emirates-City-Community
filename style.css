@@ -1,0 +1,618 @@
+/* Eric Meyer's Reset CSS v2.0 - https://meyerweb.com/eric/tools/css/reset/ */
+/* Reset styles */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    font-family: 'Roboto', sans-serif;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+    background-color: #FAF9F6;
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+a:visited{
+    color:inherit;
+    text-decoration: none;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* End of Eric Meyer's Reset CSS */
+
+
+/* CSS Stylings for header and navigation tags */
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0;
+    background-color: #A4907C;
+}
+
+h1{
+    text-align: center;
+    margin-right: 3rem;
+    font-size: 20px;
+    font-weight: 700;
+    color:#fff;
+}
+
+#nav-menu-container{
+    display:none;
+    position:fixed;
+    top:0%;
+    left:0%;
+    width:100%;
+    min-height: 100%;
+    background-color:rgba(0,0,0,0.8);
+}
+
+#nav-menu{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top:0;
+    right: 0;
+    height: 100vh;
+    width: 45vw;
+    padding: 2.03rem 0 0 1rem;
+    color:hsl(0, 0%, 81%);
+    animation-duration: .7s;
+    animation-name: animateNavMenu;
+    background-color: #A4907C;
+}
+#nav-menu h3{
+    font-size: 12px;
+    margin-bottom: .7rem;
+}
+#nav-menu h2{
+    color: black;
+    font-family: 'Sacramento', cursive;
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0 0 3rem 0;
+}
+#nav-menu h2::after{
+    content: '';
+    position: absolute;
+    right: 0;
+    display: block;
+    width: 100%;
+    height: 1px;
+    margin-top: 1rem;
+    background-color:hsl(0, 0%, 70%);
+}
+
+#nav-menu ul{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#nav-menu ul li i:hover{
+    cursor: pointer;
+    color: hsl(0, 0%, 100%);
+}
+
+#go-back{
+    background: none;
+    border: none;
+    color: hsl(0, 0%, 81%);
+    font-size: 1.1rem;
+    cursor: pointer;
+    width: 1rem;
+    margin: 5rem auto;
+}
+#go-back:hover{
+    color:hsla(0, 0%, 100%);
+}
+
+#nav-bar{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: .7rem 0 0 0;
+}
+
+#nav-bar button{
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    font-size: 12px;
+    background:none;
+}
+#nav-bar button::after{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    margin-top: 5px;
+    background-color: #A4907C;
+    visibility: hidden;
+}
+#nav-bar button.selected::after{
+    visibility: visible;
+}
+.selected{
+    color:#A4907C;
+}
+#nav-bar button:hover{
+    color:#A4907C;
+}
+
+
+#menu-btn{
+    background:none;
+    border:none;
+    cursor: pointer;
+    font-size: 20px;
+    color:#fff;
+}
+
+body.no-scroll{
+    overflow: hidden;
+}
+
+@keyframes animateNavMenu{
+    from {
+        right: -300px;
+        opacity: 0;
+    }
+    to {
+        right: 0%;
+        opacity: 1;
+    }
+}
+
+/* CSS for main section */
+
+.alert-messages-container{
+    margin: 1rem;
+    padding: 1rem ;
+    border-radius: .7rem;
+    line-height: 1.3;
+    background-color: #F1DEC9;
+}
+.alert-messages-container a{
+    color:#A4907C;
+}
+
+aside{
+    position: fixed;
+    right: 0;
+    top:50%;
+}
+aside a:hover{
+    cursor: pointer;
+    color: #F1DEC9;
+}
+
+#add-msg-container{
+    padding: 1rem;
+    border-radius: 5rem 0 0 5rem;
+    background-color: #A4907C;
+}
+
+#add-btn{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    color: hsl(0, 0%, 21%);
+    font-size: 2rem;
+    background-color: #A4907C;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right:1.1rem;
+    overflow: hidden;
+}
+
+
+/* CSS for sale item container */
+
+.sale-item-container{
+    background-color: #F1DEC9;
+    margin: 1.3rem .7rem;
+    padding: 1.3rem;
+    border-radius: .7rem;
+}
+.sale-item-container img{
+    max-width: 100%;
+    display: block;
+    height: auto;
+    margin:0 auto 1rem auto ;
+    border-radius: .7rem;
+}
+.sale-item-container .share-link{
+    top:35%;
+    right:5%;
+}
+.sale-item-container .share-link:hover{
+    color:#fff;
+    cursor: pointer;
+}
+.sale-item-container .item-description{
+    line-height: 1.1;
+}
+.sale-item-container h3{
+    font-size: 18px;
+    font-weight: 700;
+    padding-bottom: .7rem;
+}
+.sale-item-container .div-one{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.sale-item-container .div-two{
+    display: flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-top: .7rem;
+    color:#A4907C;
+    font-weight: 500;
+}
+.sale-item-container div p:hover{
+    cursor: pointer;
+    color: #fff;
+}
+
+/* CSS for home page */
+
+.welcome-message-container{
+    margin: 1.7rem .5rem .5rem .5rem;
+    padding: 0 0 1.25rem 0;
+}
+
+.welcome-message {
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 1.35rem;
+}
+
+.welcome-message strong {
+    color:#A4907C;
+}
+
+.intro-para{
+    color: #333;
+    line-height: 1.2;
+    margin: .5rem;
+}
+.intro-para span{
+    font-weight: 600;
+}
+
+#home-page-main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    min-width: 100vw;
+}
+#home-page-main a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    word-break: break-all;
+    min-width: 74.391px;
+    min-width: 22%;
+    min-height: 62.188px;
+    margin: .5rem;
+    padding: 1rem .5rem;
+    border-radius: .3rem;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2), 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2), 0 -0.25rem 0.5rem rgba(0, 0, 0, 0.2);
+}
+#home-page-main a:hover{
+    color: #fff;
+    background-color:#A4907C;
+}
+#home-page-main a p{
+    padding-bottom: .1rem;
+}
+#home-page-main a i{
+    padding-bottom:.1rem;
+}
+
+.masjid{
+    color:#fff;
+    height:19px;
+    padding-bottom:.1rem;
+}
+
+/* CSS for footer container */
+
+footer{
+    background-color:#8D7B68;
+}
+
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    margin-top: 5rem;
+    padding: 3.7rem 1.25rem 1.25rem 1.25rem;
+}
+
+.contact-container h2 {
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.contact-container p {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.contact-container a:hover {
+    color: #fff;
+}
+
+#copyright{
+    padding:1rem;
+    font-size: 14px;
+    text-align: center;
+}
+#copyright span{
+    font-family: 'Sacramento', cursive;
+    font-weight: 700;
+}
+#copyright #rights{
+    padding-top: .7rem;
+    margin-bottom: 1rem;
+}
+
+/* CSS for Prayer Timing */
+
+#main-prayer{
+    min-width:100vw;
+}
+
+#together-container{
+    margin: 1rem 0;
+}
+
+#back-btn{
+    position: absolute;
+    margin: 0 .7rem;
+}
+
+.time-title{
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+#prayer-time-container{
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    margin: 3rem .5rem;
+    min-width: 80%;
+    color:hsl(45, 29%, 91%);
+    font-weight: 500;
+    text-transform: uppercase;
+}
+#iqama-container, #prayer-container, #azan-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    min-width: 25%;
+    padding: 1.5rem .37rem;
+}
+
+#iqama-container, #azan-container{
+    background-color: #F1DEC9;
+    color: black;
+    font-weight: 400;
+}
+
+#prayer-container{
+    background-color:#A4907C;
+}
+
+#azan, #iqama{
+    font-weight: 900;
+    color:#333;
+}
+
+#iqama-container{
+    border-radius: 1rem 0 0 1rem;
+}
+
+#azan-container{
+    border-radius: 0 1rem 1rem 0;
+}
+
+
+/* CSS for About page */
+
+.about-main-container{
+    margin: 1rem 1.7rem;
+    line-height: 1.5;
+}
+#about-para-one::first-letter{
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.about-main-container p{
+    color:#333;
+    padding-top: 1rem;
+}
+
+#about-para-two ,#about-para-one{
+    margin-bottom: 1.3rem;
+}
+
+.about-main-container img{
+    max-width: 100%;
+    display: block;
+    height: auto;
+    margin: 0 auto ;
+    border-radius: .7rem;
+}
+.about-main-container figcaption{
+    text-align: center;
+    font-size: 12px;
+    font-style: italic;
+    color: #333;
+    font-weight: 500;
+}
+.about-main-container figcaption a:hover{
+    color: #8D7B68;
+}
+
+#emiratescity{
+    font-weight: 600;
+}
+
+
+/* CSS for Job page */
+
+#jobs-container{
+    margin: 1rem;
+}
+
+.job-title{
+    text-align: center;
+    font-weight: 500;
+    padding-bottom: .7rem;
+}
+
+.job-post-date{
+    font-size: 14px;
+    font-weight: 500;
+    padding-bottom: .7rem;
+}
+
+.job-offer-container{
+    margin: 1.3rem 0;
+    padding: 1.3rem 1rem;
+    line-height: 1.3;
+    border-radius: 1rem;
+    background-color: #F1DEC9;
+}
+.job-offer-container a{
+    display: inline-block;
+    padding-top: .7rem;
+    color:#A4907C;
+    font-weight: 500;
+}
+
+/* CSS for Offer Page */
+#offer-main-container #together-container{
+    padding-bottom: 1rem;
+}
+
+.offer-title{
+    position: relative;
+    margin: 1rem;
+    font-weight: 700;
+    color: #333;
+    text-transform: uppercase;
+    z-index: 1;
+}
+
+.offers-container{
+    background-color: #F1DEC9;
+    margin: 1.3rem .7rem;
+    padding: 1rem;
+    border-radius:1rem;
+    text-transform: uppercase;
+}
+.offers-container span{
+    color: #333;
+    text-transform: lowercase;
+    font-weight: 500;
+}
+.remarks::before{
+    content: "REMARKS - ";
+    font-weight: 500;
+    color:black;
+}
+.remarks{
+    display: none;
+    text-transform: none;
+    color: #333;
+}
+
+.offer-shop-title{
+    text-align: center;
+    font-weight: 700;
+}
+
+.offer-validity{
+    font-weight: 500;
+    margin: 1rem 0 .5rem 0;
+}
+
+.offer-pdf-utility{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+.offer-pdf-utility a:hover{
+    color: #fff;
+}
+
+.offers-container a{
+    color: #A4907C;
+    font-weight: 500;
+}
+
+/* CSS Style for different sized screens */
+
+
+
+@media screen and (min-height:600px){
+   
+    h1{
+        font-size:1.25rem;
+    }
+    #nav-menu h2{
+        font-size: 22px;
+    }
+    #nav-menu{
+        font-size:20px ;
+    }
+    #iqama-container, #prayer-container, #azan-container{
+        gap: 2.3rem;
+    }
+
+}
